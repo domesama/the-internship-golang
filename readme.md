@@ -1,6 +1,5 @@
 The Internship 2021 assignments
 -
-
 All the following codes are written in `Golang`
 
 Get Started
