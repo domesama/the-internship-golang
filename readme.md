@@ -4,7 +4,7 @@ All the following codes are written in `Golang`
 
 Get Started
 -
-`go mod init he-internship-assignments`
+type `go mod init the-internship-assignments`
 
 To run the code
 -
