@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"strconv"
 )
@@ -39,9 +40,9 @@ func DigitHangman(){
 			}
 		} else{
 			//res = append( res,[]rune(strconv.Itoa(num))[0])
-			res += " " +strconv.Itoa(num)
+			res += strconv.Itoa(num)
 		}
-		fmt.Println(string(res))
+		fmt.Println(addSpace(string(res)))
 	}
 	fmt.Println("Your total score is:" ,count)
 }
@@ -58,4 +59,13 @@ func contains(s [12]int, num int) ([]int, bool) {
 		return nil, false
 	}
 	return res, true
+}
+
+func addSpace(s string) string {
+	buf := &bytes.Buffer{}
+	for _, r := range s {
+		buf.WriteRune(' ')
+		buf.WriteRune(r)
+	}
+	return buf.String()
 }

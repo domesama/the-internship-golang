@@ -2,6 +2,12 @@ The Internship 2021 assignments
 -
 All the following codes are written in `Golang`
 
+Name: Thethawat Kongyu 
+
+Phone number: 0946166254
+
+Email: thethawat.k@gmail.com
+
 Get Started
 -
 type `go mod init the-internship-assignments`
