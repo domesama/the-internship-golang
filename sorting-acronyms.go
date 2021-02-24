@@ -35,7 +35,6 @@ func SortingAcronyms()  {
 		}
 		res = append(res, tempRes)
 	}
-
 	printSlice(res)
 }
 func printSlice(s []string) {

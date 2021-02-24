@@ -1,8 +1,8 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
+	"log"
 	"strconv"
 )
 
@@ -17,7 +17,12 @@ func DigitHangman(){
 		if err != nil{
 			fmt.Println(err)
 		}
-		slice[i] = temp
+		if temp >= 0 && temp <= 9{
+			slice[i] = temp
+		}else{
+			log.Fatal("The given input range is beyond 0-9, please re-input the range")
+		}
+
 	}
 	fmt.Println(slice)
 
@@ -28,21 +33,22 @@ func DigitHangman(){
 		if err != nil{
 			fmt.Println(err)
 		}
-
 		pos, found := contains(slice, num)
-
 		if found{
-			count += len(pos)
-			for _,val := range pos{
-				temp := []rune(res)
-				temp[val] = []rune(strconv.Itoa(num))[0]
-				res = string(temp)
+			existed,_ := strconv.ParseInt( string([]rune(res)[pos[0]]), 10, 4)
+			if existed != int64(num) {
+				count += len(pos)
+				for _, val := range pos {
+					temp := []rune(res)
+					temp[val] = []rune(strconv.Itoa(num))[0]
+					res = string(temp)
+				}
 			}
 		} else{
 			//res = append( res,[]rune(strconv.Itoa(num))[0])
-			res += strconv.Itoa(num)
+			res += " " + strconv.Itoa(num)
 		}
-		fmt.Println(addSpace(string(res)))
+		fmt.Println(string(res))
 	}
 	fmt.Println("Your total score is:" ,count)
 }
@@ -59,13 +65,4 @@ func contains(s [12]int, num int) ([]int, bool) {
 		return nil, false
 	}
 	return res, true
-}
-
-func addSpace(s string) string {
-	buf := &bytes.Buffer{}
-	for _, r := range s {
-		buf.WriteRune(' ')
-		buf.WriteRune(r)
-	}
-	return buf.String()
 }
