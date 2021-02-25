@@ -19,6 +19,8 @@ func main(){
 	//BasicWebCrawler.ExtractDataFromSourceHTML()
 
 	//4.2 with the integration of standard net/http router from go with the integration of previous functions from 4.1
+	//Please send a GET request to http://localhost:8080/logo to see the results
+
 	//http.HandleFunc("/logo", BasicWebCrawler.CompanyLogoGET)
 	//log.Fatal(http.ListenAndServe(":8080", nil))
 

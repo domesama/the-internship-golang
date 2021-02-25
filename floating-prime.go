@@ -33,7 +33,6 @@ func FloatingPrime() bool{
 
 	//For loops the converted strings has already been splited
 	for _,val := range string([]rune(splited[1])){
-
 		//Concat the splited strings together
 		temp += string(val)
 		n, _ := strconv.ParseInt(temp,10,32 )

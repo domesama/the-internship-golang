@@ -10,6 +10,8 @@ func DigitHangman(){
 	slice := [12]int{}
 	res := string("____________")
 	var count int
+
+	fmt.Println("Please input 12 numbers that ranges from 0-9")
 	for i:=0; i < 12; i++{
 		var temp int
 		_,err := fmt.Scan(&temp)
@@ -22,7 +24,6 @@ func DigitHangman(){
 		}else{
 			log.Fatal("The given input range is beyond 0-9, please re-input the range")
 		}
-
 	}
 	fmt.Println(slice)
 
